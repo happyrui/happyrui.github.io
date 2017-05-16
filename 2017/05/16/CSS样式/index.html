@@ -1,0 +1,739 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS样式,盒模型,选择器," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="CSS样式编写的主要依据是弹性盒模型">
+<meta name="keywords" content="CSS样式,盒模型,选择器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS样式">
+<meta property="og:url" content="http://yoursite.com/2017/05/16/CSS样式/index.html">
+<meta property="og:site_name" content="viviarui.Blog">
+<meta property="og:description" content="CSS样式编写的主要依据是弹性盒模型">
+<meta property="og:updated_time" content="2017-05-16T14:39:44.886Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS样式">
+<meta name="twitter:description" content="CSS样式编写的主要依据是弹性盒模型">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/16/CSS样式/"/>
+
+
+
+
+
+  <title>CSS样式 | viviarui.Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">viviarui.Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">热爱生命 敬畏自然</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/CSS样式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rui Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="viviarui.Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS样式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T22:34:29+08:00">
+                2017-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  CSS样式编写的主要依据是弹性盒模型
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>伪类选择器<br>常用伪类选择器：<br>  ● :link IE6+<br>  ● :visited IE7+<br>  ● :hover IE6中仅可用于链接<br>  ● :active IE6/7中仅可用于链接<br>  ● :enabled IE9+<br>  ● :disabled IE9+<br>  ● :checked IE9+<br>  ● :first-child IE8+<br>  ● :last-child IE9+<br>  ● :nth-child(even) 可为 odd even 或数字 IE9+<br>  ● :nth-last-child(n) n从 0 开始计算 IE9+<br>  ● :only-child 仅选择唯一的元素 IE9+<br>  ● :only-of-type IE9+<br>  ● :first-of-type IE9+<br>  ● :last-of-type IE9+<br>  ● :nth-of-type(even) IE9+<br>  ● :nth-last-of-type(2n) IE9+<br>不常用伪类选择器：<br>  ● :empty 选中页面中无子元素的标签 IE9+<br>  ● :root 选择 HTML 根标签 IE9+<br>  ● :not() 参数为一般选择器 IE9+<br>  ● :target 被锚点选中的目标元素 IE9+<br>  ● :lang() 选中语言值为某类特殊值的元素 IE7+<br>NOTE：element:nth-of-type(n) 指父元素下第 n 个 element 元素，element:nth-child(n) 指父元素下第 n 个元素且元素为 element，若不是，选择失败。具体细节请在使用时查找文档。</p>
+<div><br>  <a href="http://sample-site.com" title="Sample Site" target="_blank" rel="external">Sample Site</a><br></div><br><style type="text/css"><br>  /<em> 伪类属性定义有顺序要求！ </em>/<br>  a:link {<br>    color: gray;<br>  }<br>  a:visited {<br>    color:red;<br>  }<br>  a:hover {<br>    color: green;<br>    /<em> 鼠标悬停 </em>/<br>  }<br>  a:active {<br>    color: orange;<br>    /<em> 鼠标点击 </em>/<br>  }<br></style><br><br>其他选择器<br>伪元素选择器<br>注意与伪类学则器的区分。<br>  ● ::first-letter IE6+<br>  ● ::first-line IE6+<br>  ● ::before{content: “before”} 需与 content 一同使用 IE8+<br>  ● ::after{content: “after”} 需与 content 一同使用 IE8+<br>  ● ::selection 被用户选中的内容（鼠标选择高亮属性）IE9+ Firefox需用 -moz 前缀<br>组合选择器<br>  ● 后代选择器 .main h2 {…}，使用 表示 IE6+<br>  ● 子选择器 .main&gt;h2 {…}，使用&gt;表示 IE7+<br>  ● 兄弟选择器 h2+p {…}，使用+表示 IE7+<br>      ○ h2~p {…}，使用~表示（此标签无需紧邻）IE7+<br>选择器分组<br><style type="text/css"><br>/<em> 下面两组样式声明效果一致 </em>/<br>h1 {color: red;}<br>h2 {color: red;}<br>h3 {color: red;}<br><br>h1, h2, h3 {color: red;}<br></style><br><br>继承、优先、层级<br>继承<br>子元素继承父元素的样式，但并不是所有属性都是默认继承的。通过文档中的 inherited: yes 来判断属性是否可以自动继承。<br><br>自动继承属性：<br>  ● color<br>  ● font<br>  ● text-align<br>  ● list-style<br>  ● …<br>非继承属性：<br>  ● background<br>  ● border<br>  ● position<br>  ● …<br>优先<br>CSS Specificity Calculator 可以在这里找到。更多关于 CSS 优先级别的信息可以在这里找到（英文）。<br>计算方法：<br>  ● a = 行内样式<br>  ● b = id 选择器的数量<br>  ● c = 类、伪类的属性选择器的数量<br>  ● d = 标签选择器和伪元素选择器的数量<br>NOTE：从上到下优先级一次降低，且优先级高的样式会将优先级低的样式覆盖。大致公式（并不准确）如下。<br>value = a <em> 1000 + b </em> 100 + c <em> 10 + d<br><br>改变优先级<br>  ● 改变样式声明先后顺序<br>  ● 提升选择器优先级<br>  ● !important（慎用）<br>层叠<br>层叠为相同属性根据优先级覆盖，如优先级相同则后面会覆盖前面的属性，而不同属性则会合并。<br><br>布局<br>学习布局前须知道 CSS 中的定位机制。<br>  ● 标准文档流（Normal Flow）<br>  ● 浮动（Float）<br>  ● 绝对定位（Absolute Positioning)<br>标准文档流，从上到下，从左到右的输出文档内容。它由块级（block）元素和行级元素组成，且它们都是盒子模型。<br>下面为 Firefox 布局可视化 Gecko Reflow Visualisation，布局是指浏览器将元素以正确的大小摆放在正确的位置上。<br><br>display<br>设置元素的显示方式<br>display默认宽度可设置宽高起始位置block父元素宽度是换行inline内容宽度否同行inline-block内容宽度是同行<br>display:block<br>  ● 默认宽高为父元素宽高<br>  ● 可设置宽高<br>  ● 换行显示<br>  ● 默认为block的元素：<div>, <p>, </p><h1> ~ <h6>, <ul>, <form><br>display:inline<br>  ● 默认宽度为内容宽度<br>  ● 不可设置宽高<br>  ● 同行显示（元素内部可换行）<br>  ● 默认为inline的元素：<span>, <a>, <label>, <cite>, <em><br>display:inline-block<br>  ● 默认宽度为内容宽度<br>  ● 可设置宽高<br>  ● 同行显示<br>  ● 整块换行<br>  ● 默认为inline-block的元素：<input>, <textarea>, </textarea><select>, </select><button><br>display:none<br>  ● 设置元素不显示<br>display:none 与 visibility:hidden 的区别为 display:none 不显示且不占位，但 visibility:hidden 不显示但占位。<br>position<br>position 用于设置定位的方式与top right bottom left z-index 则用于设置参照物位置（必须配合定位一同使用）。<br>三种定位形式<br>  ● 静态定位（static）<br>  ● 相对定位（relative）<br>  ● 绝对定位（absolute、fixed）<br>position: static | relative | absolute | fixed<br>/</button></em> 默认值为 static <em>/<br><br>position:relative<br>  ● 相对定位的元素仍在文档流之中，并按照文档流中的顺序进行排列。<br>  ● 参照物为元素本身的位置。<br>NOTE：最常用的目的为改变元素层级和设置为绝对定位的参照物。<br><br>position:absolute<br>建立以包含块为基准的定位，其随即拥有偏移属性和 z-index 属性。<br>  ● 默认宽度为内容宽度<br>  ● 脱离文档流<br>  ● 参照物为第一个定位祖先或根元素（<html> 元素）<br><br>position:fixed<br>  ● 默认宽度为内容宽度<br>  ● 脱离文档流<br>  ● 参照物为视窗<br>NOTE：宽高的100%的参照依然为视窗（例：网页遮罩效果）<br><br>top/right/bottom/left<br><br>其用于设置元素边缘与参照物边缘的距离，且设置的值可为负值。在同时设置相对方向时，元素将被拉伸。<br>z-index<br>其用于设置 Z 轴上得排序，默认值为 0 但可设置为负值。（如不做设置，则按照文档流的顺序排列。后面的元素将置于前面的元素之上）<br><br>z-index 栈<br>父类容器的 z-index 优于子类 z-index 如图<br><br>float<br>CSS 中规定的定位机制，其可实现块级元素同行显示并存在于文档流之中。浮动仅仅影响文档流中下一个紧邻的元素。<br>float: left | right | none | inherit<br><br>  ● 默认宽度为内容宽度<br>  ● 脱离文档流（会被父元素边界阻挡与position脱离文档流的方式不同）<br>  ● 指的方向一直移动<br><br>float 元素在同一文档流中，当同时进行 float 时它们会按照文档流中的顺序排列。(当所有父元素中的所有元素脱离文档流之后，父元素将失去原有默认的内容高度)<br><br>注意：float 元素是半脱离文档流的，对元素是脱离文档流，但对于内容则是在文档流之中的（既元素重叠但内容不重叠）。<br><br>clear<br>clear: both | left | right | none | inherit<br><br>  ● 应用于后续元素<br>  ● 应用于块级元素（block）<br>使用方法：<br>优先级自上而下<br>  1. clearfix 于父元素<br>  2. 浮动后续空白元素 .emptyDiv {clear: both}<br>  3. 为受到影响的元素设置 width: 100% overflow: hidden 也可<br>  4. 块级元素可以使用 <br> 不建议使用，影响 HTML 结构<br>/</html></em> clearfix <em>/<br>.clearfix:after {<br>   content: “.”; /</em> Older browser do not support empty content <em>/<br>   visibility: hidden;<br>   display: block;<br>   height: 0;<br>   clear: both;<br>}<br>.clearfix {zoom: 1;} /</em> 针对 IE 不支持 :after <em>/<br><br>flex<br><br>弹性布局可用于多行自适应，多列自适应，间距自适应和任意对齐。<br>创建 flex container<br>display: flex<br>/</em> 弹性容器内的均为弹性元素*/<br><br>flex item<br>只有弹性容器在文档流中的子元素才属于弹性元素。<br><div style="display: flex;"><br>  <div>Block Element</div><br>  <!-- flex item: YES--><br>  <span>Inline Element</span><br>  <!-- flex item: YES--><br>  <div style="position:absolute;">Absolute Block Element</div><br>  <!-- flex item: YES--><br></div>
+
+<p>flex 方向<br>flex-direction<br><!-- 默认值为 row --><br>flex-direction: row | row-reverse | column | column-reverse</p>
+<p>flex-wrap<br><!-- 默认值为 nowrap --><br>flex-wrap: nowrap | wrap | wrap-reverse</p>
+<p>flex-flow<br>flex-flow 为 flex-wrap 与 flex-direction 的简写，建议使用此属性（避免同时使用两个属性来修改）。<br>flex-flow: &lt;’flex-direction’&gt; || &lt;’flex-wrap’&gt;</p>
+<p>order<br>order 的值为相对的（同被设置和未被设置的值相比较），当均为设置时默认值为 0 则按照文档流中的顺序排列。<br>order: <integer><br><!-- 默认为 0 --></integer></p>
+<p>flex 弹性<br>flex-basis<br>其用于设置 flex-item 的初始宽高（并作为弹性的基础）。如果 flex-direction 是以 row 排列则设置宽，如以 column 排列则设置高。<br>flex-basis: main-size | <width></width></p>
+<p>flex-grow<br>伸展因子，其为弹性布局中最重要的元素之一，flex-grow 设置元素可用空余空间的比例。flex-container 先安装宽度（flex-basis）进行布局，如果有空余空间就按照 flex-grow 中的比例进行分配。<br>Width/Height = flex-basis + flex-grow/sum(flow-grow) * remain<br>flex-grow: <number><br>initial: 0<br><!-- 默认值为 0 --></number></p>
+<p>flex-shrink<br>收缩因子，用于分配超出的负空间如何从可用空间中进行缩减。<br>flex-shrink: <number><br>initial: 1<br><!-- 默认值为 1 --></number></p>
+<p>Width/Height = flex-basis + flow-shrink/sum(flow-shrink) * remain<br>remain 为负值，既超出的区域。</p>
+<p>flex<br>其为 flex-grow flex-shrink flex-basis 的值缩写。<br>flex: &lt;’flex-grow’&gt; || &lt;’flex-shrink’&gt; || &lt;’flex-basis’&gt;<br>initial: 0 1 main-size</p>
+<p>flex 对齐<br>justify-content<br>其用于设置主轴（main-axis）上的对其方式。弹性元素根据主轴（横向和纵向均可）定位所以不可使用 left 与 right 因为位置为相对的。（行为相似的属性有 text-align）<br>justify-content: flex-start | flex-end | center | space-between | space-around<br><!-- 默认值为 flex-start --></p>
+<p>align-items<br>其用于设置副轴（cross-axis）上的对其方式。（行为相似的属性有 vertical-align）<br>align-items: flex-start | flex-end | center | baseline | stretch<br><!-- 默认值为 stretch --></p>
+<p>align-self<br>其用于设置单个 flex-item 在 cross-axis 方向上的对其方式。<br>align-self: auto | flex-start | flex-end | center | baseline | stretch<br><!-- 默认值为 auto --></p>
+<p>align-content<br>其用于设置 cross-axis 方向上的对其方式。<br>align-content:flex-start | flex-end | center | space-between | space-around | stretch<br><!-- 默认为 stretch --></p>
+</cite></label></a></span></form></ul></h6></h1></div></em>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS样式/" rel="tag"># CSS样式</a>
+          
+            <a href="/tags/盒模型/" rel="tag"># 盒模型</a>
+          
+            <a href="/tags/选择器/" rel="tag"># 选择器</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/25/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Rui Zhao" />
+          <p class="site-author-name" itemprop="name">Rui Zhao</p>
+           
+              <p class="site-description motion-element" itemprop="description">web前端是需要你倾尽全力去学的，各种层出不穷的框架，不断更新的技术。记住，你需要成为一个终生学习者</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text"> ~ , , display:inline  ● 默认宽度为内容宽度  ● 不可设置宽高  ● 同行显示（元素内部可换行）  ● 默认为inline的元素：, , , , display:inline-block  ● 默认宽度为内容宽度  ● 可设置宽高  ● 同行显示  ● 整块换行  ● 默认为inline-block的元素：, , , display:none  ● 设置元素不显示display:none 与 visibility:hidden 的区别为 display:none 不显示且不占位，但 visibility:hidden 不显示但占位。positionposition 用于设置定位的方式与top right bottom left z-index 则用于设置参照物位置（必须配合定位一同使用）。三种定位形式  ● 静态定位（static）  ● 相对定位（relative）  ● 绝对定位（absolute、fixed）position: static | relative | absolute | fixed/ 默认值为 static /position:relative  ● 相对定位的元素仍在文档流之中，并按照文档流中的顺序进行排列。  ● 参照物为元素本身的位置。NOTE：最常用的目的为改变元素层级和设置为绝对定位的参照物。position:absolute建立以包含块为基准的定位，其随即拥有偏移属性和 z-index 属性。  ● 默认宽度为内容宽度  ● 脱离文档流  ● 参照物为第一个定位祖先或根元素（ 元素）position:fixed  ● 默认宽度为内容宽度  ● 脱离文档流  ● 参照物为视窗NOTE：宽高的100%的参照依然为视窗（例：网页遮罩效果）top/right/bottom/left其用于设置元素边缘与参照物边缘的距离，且设置的值可为负值。在同时设置相对方向时，元素将被拉伸。z-index其用于设置 Z 轴上得排序，默认值为 0 但可设置为负值。（如不做设置，则按照文档流的顺序排列。后面的元素将置于前面的元素之上）z-index 栈父类容器的 z-index 优于子类 z-index 如图floatCSS 中规定的定位机制，其可实现块级元素同行显示并存在于文档流之中。浮动仅仅影响文档流中下一个紧邻的元素。float: left | right | none | inherit  ● 默认宽度为内容宽度  ● 脱离文档流（会被父元素边界阻挡与position脱离文档流的方式不同）  ● 指的方向一直移动float 元素在同一文档流中，当同时进行 float 时它们会按照文档流中的顺序排列。(当所有父元素中的所有元素脱离文档流之后，父元素将失去原有默认的内容高度)注意：float 元素是半脱离文档流的，对元素是脱离文档流，但对于内容则是在文档流之中的（既元素重叠但内容不重叠）。clearclear: both | left | right | none | inherit  ● 应用于后续元素  ● 应用于块级元素（block）使用方法：优先级自上而下  1. clearfix 于父元素  2. 浮动后续空白元素 .emptyDiv {clear: both}  3. 为受到影响的元素设置 width: 100% overflow: hidden 也可  4. 块级元素可以使用  不建议使用，影响 HTML 结构/ clearfix /.clearfix:after {   content: “.”; / Older browser do not support empty content /   visibility: hidden;   display: block;   height: 0;   clear: both;}.clearfix {zoom: 1;} / 针对 IE 不支持 :after /flex弹性布局可用于多行自适应，多列自适应，间距自适应和任意对齐。创建 flex containerdisplay: flex/ 弹性容器内的均为弹性元素*/flex item只有弹性容器在文档流中的子元素才属于弹性元素。  Block Element    Inline Element    Absolute Block Element  
+
+flex 方向flex-directionflex-direction: row | row-reverse | column | column-reverse
+flex-wrapflex-wrap: nowrap | wrap | wrap-reverse
+flex-flowflex-flow 为 flex-wrap 与 flex-direction 的简写，建议使用此属性（避免同时使用两个属性来修改）。flex-flow: <’flex-direction’> || <’flex-wrap’>
+orderorder 的值为相对的（同被设置和未被设置的值相比较），当均为设置时默认值为 0 则按照文档流中的顺序排列。order: 
+flex 弹性flex-basis其用于设置 flex-item 的初始宽高（并作为弹性的基础）。如果 flex-direction 是以 row 排列则设置宽，如以 column 排列则设置高。flex-basis: main-size | 
+flex-grow伸展因子，其为弹性布局中最重要的元素之一，flex-grow 设置元素可用空余空间的比例。flex-container 先安装宽度（flex-basis）进行布局，如果有空余空间就按照 flex-grow 中的比例进行分配。Width/Height = flex-basis + flex-grow/sum(flow-grow) * remainflex-grow: initial: 0
+flex-shrink收缩因子，用于分配超出的负空间如何从可用空间中进行缩减。flex-shrink: initial: 1
+Width/Height = flex-basis + flow-shrink/sum(flow-shrink) * remainremain 为负值，既超出的区域。
+flex其为 flex-grow flex-shrink flex-basis 的值缩写。flex: <’flex-grow’> || <’flex-shrink’> || <’flex-basis’>initial: 0 1 main-size
+flex 对齐justify-content其用于设置主轴（main-axis）上的对其方式。弹性元素根据主轴（横向和纵向均可）定位所以不可使用 left 与 right 因为位置为相对的。（行为相似的属性有 text-align）justify-content: flex-start | flex-end | center | space-between | space-around
+align-items其用于设置副轴（cross-axis）上的对其方式。（行为相似的属性有 vertical-align）align-items: flex-start | flex-end | center | baseline | stretch
+align-self其用于设置单个 flex-item 在 cross-axis 方向上的对其方式。align-self: auto | flex-start | flex-end | center | baseline | stretch
+align-content其用于设置 cross-axis 方向上的对其方式。align-content:flex-start | flex-end | center | space-between | space-around | stretch
+</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">, , display:inline  ● 默认宽度为内容宽度  ● 不可设置宽高  ● 同行显示（元素内部可换行）  ● 默认为inline的元素：, , , , display:inline-block  ● 默认宽度为内容宽度  ● 可设置宽高  ● 同行显示  ● 整块换行  ● 默认为inline-block的元素：, , , display:none  ● 设置元素不显示display:none 与 visibility:hidden 的区别为 display:none 不显示且不占位，但 visibility:hidden 不显示但占位。positionposition 用于设置定位的方式与top right bottom left z-index 则用于设置参照物位置（必须配合定位一同使用）。三种定位形式  ● 静态定位（static）  ● 相对定位（relative）  ● 绝对定位（absolute、fixed）position: static | relative | absolute | fixed/ 默认值为 static /position:relative  ● 相对定位的元素仍在文档流之中，并按照文档流中的顺序进行排列。  ● 参照物为元素本身的位置。NOTE：最常用的目的为改变元素层级和设置为绝对定位的参照物。position:absolute建立以包含块为基准的定位，其随即拥有偏移属性和 z-index 属性。  ● 默认宽度为内容宽度  ● 脱离文档流  ● 参照物为第一个定位祖先或根元素（ 元素）position:fixed  ● 默认宽度为内容宽度  ● 脱离文档流  ● 参照物为视窗NOTE：宽高的100%的参照依然为视窗（例：网页遮罩效果）top/right/bottom/left其用于设置元素边缘与参照物边缘的距离，且设置的值可为负值。在同时设置相对方向时，元素将被拉伸。z-index其用于设置 Z 轴上得排序，默认值为 0 但可设置为负值。（如不做设置，则按照文档流的顺序排列。后面的元素将置于前面的元素之上）z-index 栈父类容器的 z-index 优于子类 z-index 如图floatCSS 中规定的定位机制，其可实现块级元素同行显示并存在于文档流之中。浮动仅仅影响文档流中下一个紧邻的元素。float: left | right | none | inherit  ● 默认宽度为内容宽度  ● 脱离文档流（会被父元素边界阻挡与position脱离文档流的方式不同）  ● 指的方向一直移动float 元素在同一文档流中，当同时进行 float 时它们会按照文档流中的顺序排列。(当所有父元素中的所有元素脱离文档流之后，父元素将失去原有默认的内容高度)注意：float 元素是半脱离文档流的，对元素是脱离文档流，但对于内容则是在文档流之中的（既元素重叠但内容不重叠）。clearclear: both | left | right | none | inherit  ● 应用于后续元素  ● 应用于块级元素（block）使用方法：优先级自上而下  1. clearfix 于父元素  2. 浮动后续空白元素 .emptyDiv {clear: both}  3. 为受到影响的元素设置 width: 100% overflow: hidden 也可  4. 块级元素可以使用  不建议使用，影响 HTML 结构/ clearfix /.clearfix:after {   content: “.”; / Older browser do not support empty content /   visibility: hidden;   display: block;   height: 0;   clear: both;}.clearfix {zoom: 1;} / 针对 IE 不支持 :after /flex弹性布局可用于多行自适应，多列自适应，间距自适应和任意对齐。创建 flex containerdisplay: flex/ 弹性容器内的均为弹性元素*/flex item只有弹性容器在文档流中的子元素才属于弹性元素。  Block Element    Inline Element    Absolute Block Element  
+
+flex 方向flex-directionflex-direction: row | row-reverse | column | column-reverse
+flex-wrapflex-wrap: nowrap | wrap | wrap-reverse
+flex-flowflex-flow 为 flex-wrap 与 flex-direction 的简写，建议使用此属性（避免同时使用两个属性来修改）。flex-flow: <’flex-direction’> || <’flex-wrap’>
+orderorder 的值为相对的（同被设置和未被设置的值相比较），当均为设置时默认值为 0 则按照文档流中的顺序排列。order: 
+flex 弹性flex-basis其用于设置 flex-item 的初始宽高（并作为弹性的基础）。如果 flex-direction 是以 row 排列则设置宽，如以 column 排列则设置高。flex-basis: main-size | 
+flex-grow伸展因子，其为弹性布局中最重要的元素之一，flex-grow 设置元素可用空余空间的比例。flex-container 先安装宽度（flex-basis）进行布局，如果有空余空间就按照 flex-grow 中的比例进行分配。Width/Height = flex-basis + flex-grow/sum(flow-grow) * remainflex-grow: initial: 0
+flex-shrink收缩因子，用于分配超出的负空间如何从可用空间中进行缩减。flex-shrink: initial: 1
+Width/Height = flex-basis + flow-shrink/sum(flow-shrink) * remainremain 为负值，既超出的区域。
+flex其为 flex-grow flex-shrink flex-basis 的值缩写。flex: <’flex-grow’> || <’flex-shrink’> || <’flex-basis’>initial: 0 1 main-size
+flex 对齐justify-content其用于设置主轴（main-axis）上的对其方式。弹性元素根据主轴（横向和纵向均可）定位所以不可使用 left 与 right 因为位置为相对的。（行为相似的属性有 text-align）justify-content: flex-start | flex-end | center | space-between | space-around
+align-items其用于设置副轴（cross-axis）上的对其方式。（行为相似的属性有 vertical-align）align-items: flex-start | flex-end | center | baseline | stretch
+align-self其用于设置单个 flex-item 在 cross-axis 方向上的对其方式。align-self: auto | flex-start | flex-end | center | baseline | stretch
+align-content其用于设置 cross-axis 方向上的对其方式。align-content:flex-start | flex-end | center | space-between | space-around | stretch
+</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rui Zhao</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
