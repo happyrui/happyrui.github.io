@@ -3,12 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
+title: DeiDei~
+subtitle: 不要怂，就是干！ 热爱前端搬砖
+description: 不要怂，就是干！ 热爱前端搬砖
 keywords:
-author: John Doe
-language:
+avatar: https://avatar.csdnimg.cn/F/C/5/1_zr15829039341.jpg
+author: Toss
+language: zh-Hans
 timezone:
 
 # URL
@@ -73,9 +74,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repository: http://github.com/happyrui/happyrui.github.io.git
+  branch: master
