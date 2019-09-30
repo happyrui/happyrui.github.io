@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-彻底理解JavaScript的深拷贝与浅拷贝" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/彻底理解JavaScript的深拷贝与浅拷贝/" class="article-date">
+  <time datetime="2019-06-24T10:03:59.000Z" itemprop="datePublished">2019-06-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/24/彻底理解JavaScript的深拷贝与浅拷贝/">&#39;彻底理解JavaScript的深拷贝与浅拷贝&#39;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h5><p>js中有基础类型和引用类型。<br>基础类型是存储在栈内存中的，按值存储，按值访问。基本类型有Number，String，Boolean，Null，Undefined，Symbol<br>引用类型是存储在堆内存中的，值是可变的。在栈中保存对应的指针（一个指向堆的引用地址），指向堆中实际的值。比如数组，对象，正则等，除了基本数据类型，都是引用类型了。</p>
+<p>基本类型的复制，是不会相互影响的。因为直接改变的就是栈中的值。而引用类型的复制，在修改其中一个的时候，另一个也会跟着发生变化。是因为复制的是栈中的指针，当改变值时，指针会仍然指向堆中实际的值，所以也就会跟着变化。</p>
+<h5 id="举一些例子吧："><a href="#举一些例子吧：" class="headerlink" title="举一些例子吧："></a>举一些例子吧：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基础类型</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">b = a;</span><br><span class="line"><span class="built_in">console</span>.log(b)  <span class="comment">//2</span></span><br><span class="line">b = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a, b) <span class="comment">//2,3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 引用类型</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">var</span> bcc = arr;<span class="comment">//传址 ,对象中传给变量的数据是引用类型的，会存储在堆中；</span></span><br><span class="line"><span class="keyword">var</span> cxx = arr[<span class="number">0</span>];<span class="comment">//传值，把对象中的属性/数组中的数组项赋值给变量，这时变量cxx是基本数据类型，存储在栈内存中；改变栈中的数据不会影响堆中的数据</span></span><br><span class="line"><span class="built_in">console</span>.log(bcc);<span class="comment">//2,4,6</span></span><br><span class="line"><span class="built_in">console</span>.log(cxx);<span class="comment">//2</span></span><br><span class="line"><span class="comment">//改变数值 </span></span><br><span class="line">bcc[<span class="number">1</span>] = <span class="number">6</span>;</span><br><span class="line">cxx = <span class="number">7</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">1</span>]);<span class="comment">//6</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<p>从上面我们可以得知，当我改变bcc中的数据时，arr中数据也发生了变化；但是当我改变cxx的数据值时，arr却没有发生改变。</p>
+<p>这就是传值与传址的区别。因为arr是数组，属于引用类型，所以它赋予给bcc的时候传的是栈中的地址（相当于新建了一个不同名“指针”），而不是堆内存中的对象。而cxx仅仅是从arr堆内存中获取的一个数据值，并保存在栈中。所以bcc修改的时候，会根据地址回到arr堆中修改，cxx则直接在栈中修改，并且不能指向arr堆内存中。  </p>
+<h5 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h5><p>简单来说，引用类型的直接复制，在修改其中一个的时候，另一个就会跟着变化。这种直接复制的方式  就是浅拷贝。浅拷贝是拷贝一层，深层次的对象级别的就拷贝引用</p>
+<p>还有一种浅拷贝的方式：</p>
+<p>ES6中的Object.assign方法，Object.assign是ES6的新函数。Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign() 进行的是浅拷贝，拷贝的是对象的属性的引用，而不是对象本身。</p>
+<p>为了解决这个问题，引入深拷贝的方式，其实就是拷贝多层，每一级别的数据都会拷贝出来；</p>
+<h5 id="深拷贝的实现方式"><a href="#深拷贝的实现方式" class="headerlink" title="深拷贝的实现方式"></a>深拷贝的实现方式</h5><ul>
+<li><p>手动复制</p>
+<p>  把一个对象的属性复制给另一个对象的属性</p>
+</li>
+<li><p>对象只有一层的话可以使用上面的：Object.assign()函数</p>
+</li>
+<li><p>JSON的方式，先转为字符串，再转为对象</p>
+<p>  JSON.parse(JSON.stringify(obj))</p>
+<p>  缺点：会抛弃对象的constructor。也就是深拷贝之后，不管这个对象原来的构造函数是什么，在深拷贝之后都会变成Object。而且只有可以转为json格式对象的才能这样使用。</p>
+</li>
+<li><p>递归拷贝</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">initalObj, finalObj</span>) </span>&#123;    </span><br><span class="line">  <span class="keyword">var</span> obj = finalObj || &#123;&#125;;    </span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> initalObj) &#123;        </span><br><span class="line">    <span class="keyword">var</span> prop = initalObj[i];        <span class="comment">// 避免相互引用对象导致死循环，如initalObj.a = initalObj的情况</span></span><br><span class="line">    <span class="keyword">if</span>(prop === obj) &#123;            </span><br><span class="line">      <span class="keyword">continue</span>;</span><br><span class="line">    &#125;        </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> prop === <span class="string">'object'</span>) &#123;</span><br><span class="line">      obj[i] = (prop.constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;            </span><br><span class="line">      <span class="built_in">arguments</span>.callee(prop, obj[i]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      obj[i] = prop;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;    </span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> str = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: &#123;<span class="attr">a</span>: <span class="string">"hello"</span>, <span class="attr">b</span>: <span class="number">21</span>&#125; &#125;;</span><br><span class="line">deepClone(obj, str);</span><br><span class="line"><span class="built_in">console</span>.log(str.a);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Object.create()方法</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">initalObj, finalObj</span>) </span>&#123;    </span><br><span class="line">  <span class="keyword">var</span> obj = finalObj || &#123;&#125;;    </span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> initalObj) &#123;        </span><br><span class="line">    <span class="keyword">var</span> prop = initalObj[i];        <span class="comment">// 避免相互引用对象导致死循环，如initalObj.a = initalObj的情况</span></span><br><span class="line">    <span class="keyword">if</span>(prop === obj) &#123;            </span><br><span class="line">      <span class="keyword">continue</span>;</span><br><span class="line">    &#125;        </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> prop === <span class="string">'object'</span>) &#123;</span><br><span class="line">      obj[i] = (prop.constructor === <span class="built_in">Array</span>) ? [] : <span class="built_in">Object</span>.create(prop);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      obj[i] = prop;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;    </span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/24/彻底理解JavaScript的深拷贝与浅拷贝/" data-id="ck15svul4000044usbm4xowtq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/24/彻底理解JavaScript的深拷贝与浅拷贝/">&#39;彻底理解JavaScript的深拷贝与浅拷贝&#39;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
