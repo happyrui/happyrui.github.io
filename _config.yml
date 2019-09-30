@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: DeiDei~
+title: DeiDei~ ’Blog
 subtitle: 不要怂，就是干！ 热爱前端搬砖
 description: 不要怂，就是干！ 热爱前端搬砖
 keywords:
-avatar: https://avatar.csdnimg.cn/F/C/5/1_zr15829039341.jpg
+avatar: /images/avatar.png
 author: Toss
 language: zh-Hans
 timezone:

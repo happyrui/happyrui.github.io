@@ -1,7 +1,11 @@
 ---
 title: JavaScript基础之DOM
 date: 2019-09-30 13:09:17
-tags:
+tags: 
+- JavaScript
+categories: 
+- web前端
+- JS基础
 ---
 
 ![](https://img-blog.csdnimg.cn/2018111317293160.png)
@@ -11,7 +15,7 @@ tags:
 **Document Object Model ，就是 文档对象模型**
 
 大家应该已经对HTML标签了解了，其实DOM和标签之间的关系密不可分，html标签通过浏览器解析成DOM节点。html标签包裹的内容展示在页面上，行为操作是需要DOM来完成的。一个页面有很多的html标签，那么就对应有很多DOM节点。这么多的DOM节点根据父子级的关系构成DOM树。
-
+<!-- more -->
 ### 节点类型
 
 ![](https://img-blog.csdn.net/20170821121034602)

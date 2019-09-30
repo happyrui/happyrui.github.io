@@ -1,11 +1,16 @@
 ---
 title: JavaScript基础之语言特性及数据类型
 date: 2019-09-30 13:07:21
-tags:
+tags: 
+- JavaScript
+categories: 
+- web前端
+- JS基础
 ---
 
 ### 零、是什么
  JavaScript是前端必学语言，和HTML,CSS并称为前端三剑客，是一门运行在浏览器端的脚本语言，功能是操作DOM，处理数据，渲染特效等
+<!-- more -->
 ### 一、语言特性
 
 #### 1、弱类型
