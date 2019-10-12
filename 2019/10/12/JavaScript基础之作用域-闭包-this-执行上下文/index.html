@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="零、是什么 JavaScript是前端必学语言，和HTML,CSS并称为前端三剑客，是一门运行在浏览器端的脚本语言，功能是操作DOM，处理数据，渲染特效等">
+<meta name="description" content="作用域作用域： 变量与函数的可访问范围量 分为  全局作用域： 在代码中任何地方都能访问到的对象拥有全局作用域 局部作用域： 一般只在固定的代码片段内可访问到。最常见的是在函数体内定义的变量，只能在函数体内使用。  在函数体内，局部变量的优先级高于同名的全局变量。如果在函数内声明的一个局部变量或者函数参数中带有的变量和全局变量重名，那么全局变量就被局部变量所遮盖。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript基础之语言特性及数据类型">
-<meta property="og:url" content="http://yoursite.com/2019/09/30/JavaScript基础之语言特性及数据类型/index.html">
+<meta property="og:title" content="JavaScript基础之作用域,闭包,this,执行上下文">
+<meta property="og:url" content="http://yoursite.com/2019/10/12/JavaScript基础之作用域-闭包-this-执行上下文/index.html">
 <meta property="og:site_name" content="DeiDei~ ’Blog">
-<meta property="og:description" content="零、是什么 JavaScript是前端必学语言，和HTML,CSS并称为前端三剑客，是一门运行在浏览器端的脚本语言，功能是操作DOM，处理数据，渲染特效等">
+<meta property="og:description" content="作用域作用域： 变量与函数的可访问范围量 分为  全局作用域： 在代码中任何地方都能访问到的对象拥有全局作用域 局部作用域： 一般只在固定的代码片段内可访问到。最常见的是在函数体内定义的变量，只能在函数体内使用。  在函数体内，局部变量的优先级高于同名的全局变量。如果在函数内声明的一个局部变量或者函数参数中带有的变量和全局变量重名，那么全局变量就被局部变量所遮盖。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-30T08:45:36.190Z">
+<meta property="og:updated_time" content="2019-10-12T03:17:00.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript基础之语言特性及数据类型">
-<meta name="twitter:description" content="零、是什么 JavaScript是前端必学语言，和HTML,CSS并称为前端三剑客，是一门运行在浏览器端的脚本语言，功能是操作DOM，处理数据，渲染特效等">
+<meta name="twitter:title" content="JavaScript基础之作用域,闭包,this,执行上下文">
+<meta name="twitter:description" content="作用域作用域： 变量与函数的可访问范围量 分为  全局作用域： 在代码中任何地方都能访问到的对象拥有全局作用域 局部作用域： 一般只在固定的代码片段内可访问到。最常见的是在函数体内定义的变量，只能在函数体内使用。  在函数体内，局部变量的优先级高于同名的全局变量。如果在函数内声明的一个局部变量或者函数参数中带有的变量和全局变量重名，那么全局变量就被局部变量所遮盖。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/30/JavaScript基础之语言特性及数据类型/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/12/JavaScript基础之作用域-闭包-this-执行上下文/">
 
 
 
 
 
-  <title>JavaScript基础之语言特性及数据类型 | DeiDei~ ’Blog</title>
+  <title>JavaScript基础之作用域,闭包,this,执行上下文 | DeiDei~ ’Blog</title>
   
 
 
@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/30/JavaScript基础之语言特性及数据类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/12/JavaScript基础之作用域-闭包-this-执行上下文/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Toss">
@@ -322,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript基础之语言特性及数据类型</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript基础之作用域,闭包,this,执行上下文</h1>
         
 
         <div class="post-meta">
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-30T13:07:21+08:00">
-                2019-09-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-12T11:16:00+08:00">
+                2019-10-12
               </time>
             
 
@@ -385,7 +385,7 @@
 
           
           
-             <span id="/2019/09/30/JavaScript基础之语言特性及数据类型/" class="leancloud_visitors" data-flag-title="JavaScript基础之语言特性及数据类型">
+             <span id="/2019/10/12/JavaScript基础之作用域-闭包-this-执行上下文/" class="leancloud_visitors" data-flag-title="JavaScript基础之作用域,闭包,this,执行上下文">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.8k
+                  2.5k
                 </span>
               
 
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  9
                 </span>
               
             </div>
@@ -447,83 +447,94 @@
       
 
       
-        <h3 id="零、是什么"><a href="#零、是什么" class="headerlink" title="零、是什么"></a>零、是什么</h3><p> JavaScript是前端必学语言，和HTML,CSS并称为前端三剑客，是一门运行在浏览器端的脚本语言，功能是操作DOM，处理数据，渲染特效等</p>
-<a id="more"></a>
-<h3 id="一、语言特性"><a href="#一、语言特性" class="headerlink" title="一、语言特性"></a>一、语言特性</h3><h4 id="1、弱类型"><a href="#1、弱类型" class="headerlink" title="1、弱类型"></a>1、弱类型</h4><p>说白了就是类型定义，对应的就是强类型，比如Java，C等都是强类型语言，在使用变量的时候必须声明是哪种类型的，一旦被定义了数据类型，除非强制类型转换，那么它到销毁的时候都是这个类型的，这样当然是比较安全的。而弱类型就是不需要定义是什么数据类型，它的值就表示了它是什么类型的。如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> asd1 = <span class="string">'have a nice day'</span>   <span class="comment">//string</span></span><br><span class="line"><span class="keyword">var</span> asd2 = <span class="number">20</span>                  <span class="comment">//number</span></span><br><span class="line"><span class="keyword">var</span> asd3 = <span class="keyword">new</span> <span class="built_in">Date</span>()          <span class="comment">//object</span></span><br><span class="line"><span class="keyword">var</span> asd4 = [<span class="string">'1'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>]       <span class="comment">//object</span></span><br><span class="line"><span class="keyword">var</span> asd5 = <span class="literal">true</span>                <span class="comment">//boolean</span></span><br></pre></td></tr></table></figure>
-
-
-<h4 id="2、动态性"><a href="#2、动态性" class="headerlink" title="2、动态性"></a>2、动态性</h4><p>可以直接对用户的操作做出相应，不需要通过Web服务器。采用事件驱动的方式进行，比如你点击一个提交按钮就是一个事件，也就是说你执行某种操作的动作，非常常见。当相关事件在触发的时候就会自动执行需要响应的脚本或函数。</p>
-<h4 id="3、运行在浏览器端"><a href="#3、运行在浏览器端" class="headerlink" title="3、运行在浏览器端"></a>3、运行在浏览器端</h4><p>js脚本语言不允许访问本地硬盘，也不能存储在服务器上，所以它只能通过浏览器实现数据的展示和动态交互，正是因为这样，保证了数据的安全性。</p>
-<h4 id="4、跨平台性"><a href="#4、跨平台性" class="headerlink" title="4、跨平台性"></a>4、跨平台性</h4><p>依赖于浏览器本身，与操作环境无关。只要能运行浏览器的计算机，并安装了支持javascript的浏览器就可以正确执行，从而实现了“编写一次，走遍天下”的梦想。</p>
-<h4 id="5、脚本语言"><a href="#5、脚本语言" class="headerlink" title="5、脚本语言"></a>5、脚本语言</h4><p>解释性脚本语言，javascript不需要编译，只需要嵌入到html代码中，由浏览器逐行加载解释执行</p>
-<h3 id="二、基本数据类型"><a href="#二、基本数据类型" class="headerlink" title="二、基本数据类型"></a>二、基本数据类型</h3><p>JavaScript的基本类型值是保存在栈内存中的简单数据段，按值存储，所以按值访问。基本数据类型有：</p>
-<p>Number、String、Boolean、Null、Undefined、以及ES6的symbol(独一无二的值)。</p>
-<p>用typeof 来检验基本类型，参考弱类型的举例，可以返回这些值：undefined、boolean、string、number、object、function</p>
-<p>这里还有一些有意思的例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>      <span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>           <span class="comment">//object</span></span><br><span class="line"><span class="keyword">typeof</span> [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>]  <span class="comment">//object</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;<span class="attr">asd</span>:<span class="string">'sssss'</span>&#125;  <span class="comment">//object</span></span><br></pre></td></tr></table></figure>
-
-<p>所以不要使用typeof 来区分数组还是对象，因为都返回object。</p>
-<p>有时需要根据数组或对象里有没有值来判断是否显示:</p>
+        <h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域： 变量与函数的可访问范围量</p>
+<p>分为</p>
 <ul>
-<li>如果是数组，arr.length&gt;0。</li>
-<li>如果是对象，可以直接拿属性判断 obj.name。但如果不知道有什么属性，可以使用 Object.keys(obj).length &gt; 0 来判断</li>
+<li>全局作用域： 在代码中任何地方都能访问到的对象拥有全局作用域</li>
+<li>局部作用域： 一般只在固定的代码片段内可访问到。最常见的是在函数体内定义的变量，只能在函数体内使用。</li>
 </ul>
-<p><strong>说说null和undefined的区别。</strong></p>
+<p>在函数体内，局部变量的优先级高于同名的全局变量。如果在函数内声明的一个局部变量或者函数参数中带有的变量和全局变量重名，那么全局变量就被局部变量所遮盖。</p>
+<a id="more"></a>  
+<p>声明提前：JavaScript 函数里声明的所有变量（但不涉及赋值）都被「提前」至函数体的顶部<br>由于 JavaScript 没有块级作用域，因此一些程序员特意将变量声明放在函数体顶部，而不是将声明靠近放在使用变量之处。这种做法使得他们的源代码非常清晰地反映了真实的变量作用域。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color = <span class="string">"blue"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> anotherColor = <span class="string">"red"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">swapColors</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> tempColor = anotherColor;</span><br><span class="line">        anotherColor = color;</span><br><span class="line">        color = tempColor;</span><br><span class="line">        <span class="comment">// 这里可以访问color、anotherColor和tempColor</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 这里可以访问color和anotherColor，但不能访问tempColor</span></span><br><span class="line">    swapColors();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这里只能访问color</span></span><br><span class="line">changeColor();</span><br></pre></td></tr></table></figure>
+
+<p>全局环境、changeColor() 的局部环境和 swapColors() 的局部环境。</p>
+<p>全局环境中有一个变量 color 和一个函数 changeColor()。changeColor() 的局部环境中有一个名为 anotherColor 的变量和一个名为 swapColors() 的函数，但它也可以访问全局环境中的变量 color。swapColors() 的局部环境中有一个变量tempColor，该变量只能在这个环境中访问到。无论全局环境还是 changeColor() 的局部环境都无权访问 tempColor。然而，在 swapColors() 内部则可以访问其他两个环境中的所有变量，因为那两个环境是它的父执行环境。</p>
+<p>内部环境可以通过作用域链访问所有的外部环境，但外部环境不能访问内部环境中的任何变量和函数。<code>每个环境都可以向上搜索作用域链</code>，以查询变量和函数名；但任何环境都不能通过向下搜索作用域链而进入另一个执行环境。</p>
+<h3 id="JS执行机制"><a href="#JS执行机制" class="headerlink" title="JS执行机制"></a>JS执行机制</h3><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>由于在 Javascript 语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成定义在一个函数内部的函数</p>
+<p>用处有两个:</p>
 <ul>
-<li>同：都表示 无</li>
-<li>不同： 如果转换为数值<ul>
-<li>undefined =&gt; NaN 有声明，但未赋值或者未初始化</li>
-<li>null =&gt; 0 (原型链的终点) 没有，也没有定义，不存在</li>
+<li>一个是可以读取函数内部的变量（作用域链），</li>
+<li>另一个就是让这些变量的值始终保持在内存中。</li>
 </ul>
-</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;　　　                          </span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">1</span>;                                      </span><br><span class="line">    add = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;    </span><br><span class="line">    <span class="comment">//add 是一个全局变量，add 的值是一个匿名函数。而这个匿名函数本身也是一个闭包，和 fun2 处于同一作用域，所以 add 相当于是一个 setter，可以在函数外部对函数   内部的局部变量进行操作</span></span><br><span class="line">        n += <span class="number">1</span> </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fun2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = fun();　　</span><br><span class="line">result(); <span class="comment">// 1</span></span><br><span class="line">add();</span><br><span class="line">result(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;　　　</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span>  add = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fun2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = fun();　　</span><br><span class="line">result(); <span class="comment">// 1</span></span><br><span class="line">add();</span><br><span class="line">result(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>使用闭包解决一些问题：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> plus = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="keyword">return</span> counter += <span class="number">1</span>;&#125;  <span class="comment">//闭包 </span></span><br><span class="line">    <span class="keyword">return</span> plus;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> puls2 = add();</span><br><span class="line"><span class="built_in">console</span>.log(puls2());</span><br><span class="line"><span class="built_in">console</span>.log(puls2());</span><br><span class="line"><span class="built_in">console</span>.log(puls2());</span><br><span class="line"><span class="comment">// 计数器 counter 受 add() 函数的作用域保护，只能通过 puls2 方法修改。</span></span><br></pre></td></tr></table></figure>
+
+<p>使用闭包的注意事项:</p>
+<ul>
+<li>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在 IE 中可能导致内存泄露。<strong>解决方法是，在退出函数之前，将不使用的局部变量全部删除或设置为 null，断开变量和内存的联系。</strong></li>
+<li>闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（public method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。    </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> 未定义值     <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">typeof</span> 未初始化值   <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>this 是 JavaScript 的关键字，指函数执行时的上下文，跟函数定义时的上下文无关。随着函数使用场合的不同，this 的值会发生变化。但是有一个总的原则，那就是 this 指代的是调用函数的那个对象。</p>
+<p><strong>全局上下文</strong></p>
+<p>在全局上下文中，也就是在任何函数体外部，this 指代全局对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在浏览器中，this 指代全局对象 window</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="built_in">window</span>);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="三、进阶"><a href="#三、进阶" class="headerlink" title="三、进阶"></a>三、进阶</h3><p>JavaScript 的基本知识就是上述，你可能发现好像很简单并不多，那只是基本类型，我们常用到的Object还没有介绍呢，接下来说一下进阶的知识。</p>
-<h4 id="1、引用类型"><a href="#1、引用类型" class="headerlink" title="1、引用类型"></a>1、引用类型</h4><p>和基本类型对应，引用类型是保存在堆内存中的对象，值是可变的，在栈中保存对应的指针（一个指向堆的引用地址），指向堆中实际的值。</p>
-<p>类型值：Object（在JS中除了基本数据类型以外的都是对象，数据是对象，函数是对象，正则表达式是对象）</p>
-<p>使用 instanceof 检测引用类型 。      需明确确定是哪种类型，返回 布尔值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">var</span> b = &#123;<span class="string">'a'</span>:<span class="string">'asss'</span>&#125;</span><br><span class="line">alert( a <span class="keyword">instanceof</span> <span class="built_in">Array</span>)   <span class="comment">// true</span></span><br><span class="line">alert( b <span class="keyword">instanceof</span> <span class="built_in">Object</span>)  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><strong>函数上下文</strong></p>
+<p>在函数上下文中，也就是在任何函数体内部，this 指代调用函数的那个对象。</p>
+<p><strong>函数调用中的 this</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(f1() === <span class="built_in">window</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<p>除了使用instanceof ,还可以使用一个方法来返回复杂类型的类型值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">var</span> aa = <span class="built_in">Object</span>.prototype.toString(arr)    <span class="comment">// '[object Array]'</span></span><br><span class="line">aa.substr(<span class="number">8</span>,aa.length<span class="number">-9</span>)     <span class="comment">// Array</span></span><br></pre></td></tr></table></figure>
+<p>如上代码所示，直接定义一个函数 f1()，相当于为 window 对象定义了一个属性。直接执行函数 f1()，相当于执行 window.f1()。所以函数 f1() 中的 this 指代调用函数的那个对象，也就是 window 对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    "use strict"</span>; <span class="comment">// 这里是严格模式</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(f2() === <span class="literal">undefined</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
-<p>那么基本类型和引用类型有什么区别呢。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">var</span> bcc = arr;<span class="comment">//传址 ,对象中传给变量的数据是引用类型的，会存储在堆中；</span></span><br><span class="line"><span class="keyword">var</span> cxx = arr[<span class="number">0</span>];<span class="comment">//传值，把对象中的属性/数组中的数组项赋值给变量，这时变量C是基本数据类型，存储在栈内存中；改变栈中的数据不会影响堆中的数据</span></span><br><span class="line">alert(bcc);<span class="comment">//2,4,6</span></span><br><span class="line">alert(cxx);<span class="comment">//2</span></span><br><span class="line"><span class="comment">//改变数值 </span></span><br><span class="line">bcc[<span class="number">1</span>] = <span class="number">6</span>;</span><br><span class="line">cxx = <span class="number">7</span>;</span><br><span class="line">alert(arr[<span class="number">2</span>]);<span class="comment">//6</span></span><br><span class="line">alert(arr[<span class="number">0</span>]);<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<p>如上代码所示，在「严格模式」下，禁止 this 关键字指向全局对象（在浏览器环境中也就是 window 对象），this 的值将维持 undefined 状态。</p>
+<p><strong>对象方法中的 this</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    name: <span class="string">"stone"</span>,</span><br><span class="line">    f: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o.f()); <span class="comment">// "stone"</span></span><br></pre></td></tr></table></figure>
 
-<p> 从上面我们可以得知，当我改变bcc中的数据时，arr中数据也发生了变化；但是当我改变cxx的数据值时，arr却没有发生改变。</p>
-<p>  这就是<strong>传值</strong>与<strong>传址</strong>的区别。因为arr是数组，属于引用类型，所以它赋予给bcc的时候传的是栈中的地址（相当于新建了一个不同名“指针”），而不是堆内存中的对象。而cxx仅仅是从arr堆内存中获取的一个数据值，并保存在栈中。所以bcc修改的时候，会根据地址回到arr堆中修改，cxx则直接在栈中修改，并且不能指向arr堆内存中。</p>
-<p>  接下来就涉及到比较常用的深拷贝和浅拷贝，我们放在之后来说</p>
-<h4 id="2、类型判断"><a href="#2、类型判断" class="headerlink" title="2、类型判断"></a>2、类型判断</h4><p>在开发的过程中经常会判断值是否相等来进行下一步的操作，在js中有两个方式判断两个值是否相等。</p>
-<p>** ==   等于操作符 **
-js是弱类型语言，在使用 == 操作符的时候，会进行强制类型转换</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">""</span>           ==   <span class="string">"0"</span>           <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span>            ==   <span class="string">""</span>            <span class="comment">// true</span></span><br><span class="line"><span class="number">0</span>            ==   <span class="string">"0"</span>           <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span>        ==   <span class="string">"false"</span>       <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span>        ==   <span class="string">"0"</span>           <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span>        ==   <span class="literal">undefined</span>     <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span>        ==   <span class="literal">null</span>          <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span>         ==   <span class="literal">undefined</span>     <span class="comment">// true</span></span><br><span class="line"><span class="string">" \t\r\n"</span>    ==   <span class="number">0</span>             <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>如上代码所示，对象 o 中包含一个属性 name 和一个方法 f()。当我们执行 o.f() 时，方法 f() 中的 this 指代调用函数的那个对象，也就是对象 o，所以 this.name 也就是 o.name。</p>
+<p>注意，在何处定义函数完全不会影响到 this 的行为，我们也可以首先定义函数，然后再将其附属到 o.f。这样做 this 的行为也一致。如下代码所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">name</span>: <span class="string">"stone"</span> &#125;;</span><br><span class="line">o.f = fun;</span><br><span class="line"><span class="built_in">console</span>.log(o.f()); <span class="comment">// "stone"</span></span><br></pre></td></tr></table></figure>
 
-<p>因为在强制类型转换的时候规则比较复杂，所以说使用 == 是一个不好的编程习惯，也会带来性能消耗。</p>
-<p><strong>===  全等操作符</strong><br>不会进行强制类型转换，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">""</span>           ===   <span class="string">"0"</span>           <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span>            ===   <span class="string">""</span>            <span class="comment">// false</span></span><br><span class="line"><span class="number">0</span>            ===   <span class="string">"0"</span>           <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span>        ===   <span class="string">"false"</span>       <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span>        ===   <span class="string">"0"</span>           <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span>        ===   <span class="literal">undefined</span>     <span class="comment">// false</span></span><br><span class="line"><span class="literal">false</span>        ===   <span class="literal">null</span>          <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span>         ===   <span class="literal">undefined</span>     <span class="comment">// false</span></span><br><span class="line"><span class="string">" \t\r\n"</span>    ===   <span class="number">0</span>             <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>类似的，this 的绑定只受最靠近的成员引用的影响。在下面的这个例子中，我们把一个方法 g() 当作对象 o.b 的函数调用。在这次执行期间，函数中的 this 将指向 o.b。事实上，这与对象本身的成员没有多大关系，最靠近的引用才是最重要的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">o.b = &#123;</span><br><span class="line">    name: <span class="string">"sophie"</span></span><br><span class="line">    g: fun,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o.b.g()); <span class="comment">// "sophie"</span></span><br></pre></td></tr></table></figure>
 
-<p>所以推荐使用 === 操作符。</p>
-<h4 id="3、类型转换"><a href="#3、类型转换" class="headerlink" title="3、类型转换"></a>3、类型转换</h4><p> 所以已经使用了 === 操作符，但是还是会产生很多问题，那么不然我们自己进行类型转换。</p>
-<p> 转换为 字符类型：    将一个值加上空字符串可以轻松转换为字符串类型</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span> + <span class="number">10</span> === <span class="string">'10'</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><strong>eval() 方法中的 this</strong></p>
+<p>eval() 方法可以将字符串转换为 JavaScript 代码，使用 eval() 方法时，this 指向哪里呢？答案很简单，看谁在调用 eval() 方法，调用者的执行环境中的 this 就被 eval() 方法继承下来了。如下代码所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局上下文</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">eval</span>(<span class="string">"this"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(f1() === <span class="built_in">window</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数上下文</span></span><br><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    name: <span class="string">"stone"</span>,</span><br><span class="line">    f: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">eval</span>(<span class="string">"this.name"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o.f()); <span class="comment">// "stone"</span></span><br></pre></td></tr></table></figure>
 
+<p><strong>call() 和 apply() 方法中的 this</strong></p>
+<p>call() 和 apply() 是函数对象的方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this 指代的就是这两个方法的第一个参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>;　　</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;　　　　</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);　　</span><br><span class="line">&#125;　　</span><br><span class="line"><span class="keyword">var</span> o = &#123;&#125;;　　</span><br><span class="line">o.x = <span class="number">1</span>;</span><br><span class="line">o.m = f;　　</span><br><span class="line">o.m.apply(); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
 
-<p> 转换为 数字类型:      使用一元的加号操作符，可以把字符串转换为数字。</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+<span class="string">'10'</span> === <span class="number">10</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>call() 和 apply() 的参数为空时，默认调用全局对象。因此，这时的运行结果为 0，证明 this 指的是全局对象。如果把最后一行代码修改为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.m.apply(o); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 
+<p>运行结果就变成了 1，证明了这时 this 指代的是对象 o。</p>
+<p><strong>bind() 方法中的 this</strong></p>
+<p>ECMAScript 5 引入了 Function.prototype.bind。调用 f.bind(someObject) 会创建一个与 f 具有相同函数体和作用域的函数，但是在这个新函数中，this 将永久地被绑定到了 bind 的第一个参数，无论这个函数是如何被调用的。如下代码所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = f.bind(&#123;</span><br><span class="line">    a: <span class="string">"stone"</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(g()); <span class="comment">// stone</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    a: <span class="number">28</span>,</span><br><span class="line">    f: f,</span><br><span class="line">    g: g</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o.f(), o.g()); <span class="comment">// 28, stone</span></span><br></pre></td></tr></table></figure>
 
-<p> 转换为布尔值：     通过使用 否 操作符两次，可以把一个值转换为布尔型</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">!!<span class="string">'foo'</span>;   <span class="comment">// true</span></span><br><span class="line">!!<span class="string">''</span>;      <span class="comment">// false</span></span><br><span class="line">!!<span class="string">'0'</span>;     <span class="comment">// true</span></span><br><span class="line">!!<span class="string">'1'</span>;     <span class="comment">// true</span></span><br><span class="line">!!<span class="string">'-1'</span>     <span class="comment">// true</span></span><br><span class="line">!!&#123;&#125;;      <span class="comment">// true</span></span><br><span class="line">!!<span class="literal">true</span>;    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><strong>DOM 事件处理函数中的 this</strong></p>
+<p>一般来讲，当函数使用 addEventListener，被用作事件处理函数时，它的 this 指向触发事件的元素。如下代码所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span></span><br><span class="line"><span class="javascript">            btn.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.style.backgroundColor = <span class="string">"#A5D9F3"</span>;</span></span><br><span class="line"><span class="javascript">            &#125;, <span class="literal">false</span>);</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>是不是觉得很奇怪呢，这里我们就要说一下 <strong>假值</strong></p>
-<blockquote>
-<p>‘’、0、undefined、null、false、NaN 都是假值，返回 false。</p>
-</blockquote>
-<p>其他的都将是真值，包括对象、数组、正则、函数等。注意 ‘0’、’null’、’false’、{}、[]也都是真值  。 </p>
-<p><strong>结论</strong>： false 0 ‘’ 之间相互比较都是true,null和undefined相互比较是true。其余全是false</p>
+<p>但在 IE 浏览器中，当函数使用 attachEvent ，被用作事件处理函数时，它的 this 却指向 window。如下代码所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</span></span><br><span class="line"><span class="javascript">            btn.attachEvent(<span class="string">"onclick"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="built_in">window</span>);  <span class="comment">// true</span></span></span><br><span class="line">            &#125;);</span><br><span class="line">        <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p><strong>内联事件处理函数中的 this</strong></p>
+<p>当代码被内联处理函数调用时，它的 this 指向监听器所在的 DOM 元素。如下代码所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"alert(this.tagName.toLowerCase());"</span>&gt;</span></span><br><span class="line">  Show this</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的 alert 会显示 button，注意只有外层代码中的 this 是这样设置的。如果 this 被包含在匿名函数中，则又是另外一种情况了。如下代码所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"alert((function()&#123;return this&#125;)());"</span>&gt;</span></span><br><span class="line">  Show inner this</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在这种情况下，this 被包含在匿名函数中，相当于处于全局上下文中，所以它指向 window 对象。</p>
+<h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3>
       
     </div>
     
@@ -575,7 +586,7 @@ js是弱类型语言，在使用 == 操作符的时候，会进行强制类型�
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/09/30/JavaScript基础之语言特性及数据类型/" title="JavaScript基础之语言特性及数据类型">http://yoursite.com/2019/09/30/JavaScript基础之语言特性及数据类型/</a>
+    <a href="http://yoursite.com/2019/10/12/JavaScript基础之作用域-闭包-this-执行上下文/" title="JavaScript基础之作用域,闭包,this,执行上下文">http://yoursite.com/2019/10/12/JavaScript基础之作用域-闭包-this-执行上下文/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -603,8 +614,8 @@ js是弱类型语言，在使用 == 操作符的时候，会进行强制类型�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/24/彻底理解JavaScript的深拷贝与浅拷贝/" rel="next" title="彻底理解JavaScript的深拷贝与浅拷贝">
-                <i class="fa fa-chevron-left"></i> 彻底理解JavaScript的深拷贝与浅拷贝
+              <a href="/2019/10/12/JavaScript基础之回流重绘-正则/" rel="next" title="JavaScript基础之回流重绘,正则">
+                <i class="fa fa-chevron-left"></i> JavaScript基础之回流重绘,正则
               </a>
             
           </div>
@@ -612,10 +623,6 @@ js是弱类型语言，在使用 == 操作符的时候，会进行强制类型�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/30/JavaScript基础之DOM/" rel="prev" title="JavaScript基础之DOM">
-                JavaScript基础之DOM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -771,7 +778,7 @@ js是弱类型语言，在使用 == 操作符的时候，会进行强制类型�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#零、是什么"><span class="nav-number">1.</span> <span class="nav-text">零、是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、语言特性"><span class="nav-number">2.</span> <span class="nav-text">一、语言特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、弱类型"><span class="nav-number">2.1.</span> <span class="nav-text">1、弱类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、动态性"><span class="nav-number">2.2.</span> <span class="nav-text">2、动态性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、运行在浏览器端"><span class="nav-number">2.3.</span> <span class="nav-text">3、运行在浏览器端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、跨平台性"><span class="nav-number">2.4.</span> <span class="nav-text">4、跨平台性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、脚本语言"><span class="nav-number">2.5.</span> <span class="nav-text">5、脚本语言</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、基本数据类型"><span class="nav-number">3.</span> <span class="nav-text">二、基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、进阶"><span class="nav-number">4.</span> <span class="nav-text">三、进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、引用类型"><span class="nav-number">4.1.</span> <span class="nav-text">1、引用类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、类型判断"><span class="nav-number">4.2.</span> <span class="nav-text">2、类型判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、类型转换"><span class="nav-number">4.3.</span> <span class="nav-text">3、类型转换</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">1.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS执行机制"><span class="nav-number">2.</span> <span class="nav-text">JS执行机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">3.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this"><span class="nav-number">4.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行上下文"><span class="nav-number">5.</span> <span class="nav-text">执行上下文</span></a></li></ol></div>
             
 
           </div>
@@ -1466,13 +1473,13 @@ js是弱类型语言，在使用 == 操作符的时候，会进行强制类型�
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'JavaScript基础之语言特性及数据类型'.length > 0
+      var isPost = 'JavaScript基础之作用域,闭包,this,执行上下文'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'JavaScript基础之语言特性及数据类型'
+        var title = 'JavaScript基础之作用域,闭包,this,执行上下文'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
